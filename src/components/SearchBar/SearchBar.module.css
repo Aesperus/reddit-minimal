@@ -1,0 +1,60 @@
+/* general search bar style */
+.searchBar {
+    background-color: #c2c5c9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 black;
+    display: inline-flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+/* search bar divs inherit the flex display and add padding */
+.searchBar div {
+    display: inherit;
+    padding: 10px;
+}
+
+/* logo section 25% of the element width */
+#logoContainer {
+    width: 25%;
+}
+/* add margin to the page title for readability */
+#logoContainer h1 {
+    margin-left: 10px;
+}
+/* center the logo image*/
+#logoContainer img {
+    align-self: center;
+}
+
+/* search container 75% of the element width */
+#searchContainer {
+    justify-content: center;
+    width: 75%;
+}
+/* rounded border, padding and text alignment for the input field */
+#searchContainer input {
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+    width: 100%;
+}
+/* center the placeholder text */
+#searchContainer input::placeholder {
+    text-align: center;
+}
+/* search button style: transparent, no border, no outline, left margin for visibility */
+#searchContainer button {
+    border: none;
+    margin-left: 10px;
+    outline: none;
+    background: transparent;
+}
+/* on hover over the search button, cursor changes to pointer */
+#searchContainer button:hover {
+    cursor: pointer;
+}
+/* on tab focus, the button outline is displayed */
+#searchContainer button:focus {
+    outline: solid;
+}

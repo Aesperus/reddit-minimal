@@ -4,3 +4,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/* global styles*/
+body {
+  font-family: "Space Grotesk", sans-serif;
+  width: 1200px;
+  margin: 10px auto;
+}
