@@ -19,6 +19,10 @@ export default [
     plugins: {
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
+      'plugins': ["vitest", "jest"],
+    },
+    "env": {
+      "jest/globals": true,
     },
     rules: {
       ...js.configs.recommended.rules,
