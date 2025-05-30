@@ -23,7 +23,7 @@
     margin-left: 10px;
 }
 /* center the logo image*/
-#logoContainer img {
+#logoContainer a {
     align-self: center;
 }
 
