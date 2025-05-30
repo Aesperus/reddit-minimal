@@ -1,6 +1,6 @@
 import React from 'react';
 import SearchBar from '../components/SearchBar/SearchBar.jsx';
-import { getByRole, render, screen} from '@testing-library/react';
+import { render, screen} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Provider } from "react-redux";
 import { store } from "../store";
@@ -18,7 +18,7 @@ describe("SearchBar", () => {
         const inputField = screen.getByRole("textbox");
         const searchButton = screen.getByRole("button");
 
-        const renderedItems = [ logo, appTitle, inputField, searchButton];
+        const renderedItems = [logo, appTitle, inputField, searchButton];
         renderedItems.forEach(item => expect(item).toBeInTheDocument());
     });
 

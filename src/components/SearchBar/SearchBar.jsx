@@ -5,25 +5,31 @@ import { useDispatch, useSelector } from "react-redux";
 
 // renders the search bar component
 function SearchBar() {
+    // define dispatch and extract current search term from store
     const dispatch = useDispatch();
     const currentSearchTerm = useSelector(selectSearchTerm);
 
+    // checks if the pressed key is the enter key and if so, calls the click handler
     function checkKey(event) {
         if (event.key === "Enter") {
             handleClick();
         }
     }
 
+    // click handler for submitting a search term
     function handleClick() {
+        // extract the search term from the search bar input
         const searchTerm = document.getElementById("search");
+        // if the search term has not changed, do nothing
         if (searchTerm.value === currentSearchTerm) {
             return;
         }
+        // dispatch a startSearch action with the search term
         dispatch(startSearch(searchTerm.value));
     }
 
     // the search bar component consists of a logo section and a search section
-    // the logo section contains the logo and the application title
+    // the logo section contains the logo (link to Reddit) and the application title
     // the search section contains the search input and the search button
     return (
         <div className={styles.searchBar} aria-label="Search Bar">

@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 
 createRoot(document.getElementById('root')).render(
 
+  // connect the store to the app
   <StrictMode>
     <Provider store={store}>
         <App />
