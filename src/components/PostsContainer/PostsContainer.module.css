@@ -1,0 +1,10 @@
+/* posts container styles */
+.container {
+    background-color: #b9bcc1;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 black;
+    min-width: 65%;
+    margin: 20px 20px 0 0;
+    padding: 10px;
+    text-align: center;
+}

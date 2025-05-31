@@ -1,0 +1,14 @@
+/* post styles */
+.post {
+    background-color: #f8f6f7;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 black;
+    margin: 10px;
+    padding: 10px;
+}
+hr {
+    margin: 10px 0;
+}
+p {
+    font-size: 0.75rem;
+}

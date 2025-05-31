@@ -8,6 +8,6 @@
 /* global styles*/
 body {
   font-family: "Space Grotesk", sans-serif;
-  width: 1200px;
+  max-width: 1200px;
   margin: 10px auto;
 }
