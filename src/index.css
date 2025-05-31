@@ -11,3 +11,8 @@ body {
   max-width: 1200px;
   margin: 10px auto;
 }
+
+/* footer styles */
+footer {
+  margin-top: 20px;
+}

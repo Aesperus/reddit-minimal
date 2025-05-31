@@ -1,0 +1,27 @@
+/* subreddits container styles */
+.container {
+    background-color: #b9bcc1;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 black;
+    min-width: 33%;
+    max-height: 1000px;
+    margin: 20px 20px 0 0;
+    padding: 10px;
+    text-align: center;
+}
+
+/* subreddits list styles */
+ul {
+    margin: 10px;
+    list-style: none;
+}
+
+/* subreddit list item styles */
+li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    margin: 10px;
+}
