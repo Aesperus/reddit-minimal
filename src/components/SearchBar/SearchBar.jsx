@@ -29,7 +29,7 @@ function SearchBar() {
     }
 
     // the search bar component consists of a logo section and a search section
-    // the logo section contains the logo (link to Reddit) and the application title
+    // the logo section contains the logo (link to Reddit), and the application title
     // the search section contains the search input and the search button
     return (
         <div className={styles.searchBar} aria-label="Search Bar">
@@ -45,7 +45,7 @@ function SearchBar() {
                         alt="Reddit Minimal Logo"
                         height={32}
                         role="image"
-                        src="../../../public/reddit-minimal-logo.png"
+                        src="./reddit-minimal-logo.png"
                         title="Reddit Minimal"
                         width={32}
                     />
@@ -72,7 +72,7 @@ function SearchBar() {
                         alt="Search Icon"
                         aria-label="Search Icon"
                         role="image"
-                        src="../../../public/search.png"
+                        src="./search.png"
                         tabIndex={0}
                         title="Search"
                     />
