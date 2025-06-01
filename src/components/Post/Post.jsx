@@ -8,7 +8,7 @@ function Post({post}) {
     // use the extracted data to render the post
     return (
         <div className={ styles.post }>
-            <h2>{title}</h2>
+            <h2 aria-label={"Post Title"}>{title}</h2>
             <hr />
             <div style={{display: "flex", justifyContent: "space-between"}}>
                 <p>by {author}</p>

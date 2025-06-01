@@ -104,6 +104,7 @@ describe("SearchBar", () => {
         await user.click(screen.getByRole("button"));
 
         // expect the search term to be dispatched to the store only once
+        expect(store.dispatch).toHaveBeenCalledWith({type: "search/startSearch", payload: "testSameTerm"});
         expect(store.dispatch).toHaveBeenCalledTimes(1);
     })
 });
