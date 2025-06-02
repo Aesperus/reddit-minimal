@@ -5,12 +5,14 @@ import SearchBar from '../components/SearchBar/SearchBar.jsx';
 import { render, screen} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Provider } from "react-redux";
-import { store } from "../store";
+import { setupStore } from "../store";
+
+const mockStore = setupStore();
 
 describe("SearchBar", () => {
     it("renders correctly", () => {
         render(
-            <Provider store={store}>
+            <Provider store={mockStore}>
                 <SearchBar />
             </Provider>
         )
@@ -29,7 +31,7 @@ describe("SearchBar", () => {
 
     it("navigates to Reddit when the logo is clicked and open the page in a new tab", () => {
         render(
-            <Provider store={store}>
+            <Provider store={mockStore}>
                 <SearchBar />
             </Provider>
         )
@@ -45,10 +47,10 @@ describe("SearchBar", () => {
     it("submits the search term when the user presses the enter key", async () => {
         // define user events and add a spy on dispatch
         const user = userEvent.setup();
-        vi.spyOn(store, "dispatch");
+        vi.spyOn(mockStore, "dispatch");
 
         render(
-            <Provider store={store}>
+            <Provider store={mockStore}>
                 <SearchBar />
             </Provider>
         )
@@ -60,7 +62,7 @@ describe("SearchBar", () => {
         await user.keyboard("{enter}");
 
         // expect the search term to be dispatched to the store
-        expect(store.dispatch).toHaveBeenCalledWith({ type: "search/startSearch", payload: "testEnter" });
+        expect(mockStore.dispatch).toHaveBeenCalledWith({ type: "search/startSearch", payload: "testEnter" });
 
         // reset the search term
         searchTerm.value = "";
@@ -69,10 +71,10 @@ describe("SearchBar", () => {
     it("informs the store when the user enters a search term and clicks the search button", async () => {
         // define user events and add a spy on dispatch
         const user = userEvent.setup();
-        vi.spyOn(store, "dispatch");
+        vi.spyOn(mockStore, "dispatch");
 
         render(
-            <Provider store={store}>
+            <Provider store={mockStore}>
                 <SearchBar />
             </Provider>
         )
@@ -83,16 +85,16 @@ describe("SearchBar", () => {
         await user.click(screen.getByRole("button"));
 
         // expect the search term to be dispatched to the store
-        expect(store.dispatch).toHaveBeenCalledWith({ type: "search/startSearch", payload: "test" });
+        expect(mockStore.dispatch).toHaveBeenCalledWith({ type: "search/startSearch", payload: "test" });
     });
 
     it("does not dispatch an action when the search term has not changed", async () => {
         // define user events and add a spy on dispatch
         const user = userEvent.setup();
-        vi.spyOn(store, "dispatch");
+        vi.spyOn(mockStore, "dispatch");
 
         render(
-            <Provider store={store}>
+            <Provider store={mockStore}>
                 <SearchBar />
             </Provider>
         )
@@ -104,7 +106,7 @@ describe("SearchBar", () => {
         await user.click(screen.getByRole("button"));
 
         // expect the search term to be dispatched to the store only once
-        expect(store.dispatch).toHaveBeenCalledWith({type: "search/startSearch", payload: "testSameTerm"});
-        expect(store.dispatch).toHaveBeenCalledTimes(1);
+        expect(mockStore.dispatch).toHaveBeenCalledWith({type: "search/startSearch", payload: "testSameTerm"});
+        expect(mockStore.dispatch).toHaveBeenCalledTimes(1);
     })
 });
