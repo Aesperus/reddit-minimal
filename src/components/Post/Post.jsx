@@ -10,10 +10,10 @@ function Post({post}) {
         <div className={ styles.post }>
             <h2 aria-label={"Post Title"}>{title}</h2>
             <hr />
-            <div style={{display: "flex", justifyContent: "space-between"}}>
-                <p>by {author}</p>
-                <p>{permalink}</p>
-                <p>comments: {num_comments}</p>
+            <div style={{display: "flex", justifyContent: "space-between"}} aria-label={"Post Info"}>
+                <p aria-label={"Post Author"}>by {author}</p>
+                <p aria-label={"Permanent Link to Post"}>{permalink}</p>
+                <p aria-label={"Number of Post Comments"}>comments: {num_comments}</p>
             </div>
         </div>
     )
