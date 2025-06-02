@@ -3,7 +3,7 @@
     background-color: #f8f6f7;
     border-radius: 10px;
     box-shadow: 0 0 10px 0 black;
-    margin: 10px;
+    margin: 30px 10px;
     padding: 10px;
 }
 hr {
@@ -11,4 +11,22 @@ hr {
 }
 p {
     font-size: 0.75rem;
+}
+
+/* image and video styles */
+img {
+    margin-top: 10px;
+    width: 100%;
+    height: auto;
+}
+video {
+    margin-top: 10px;
+    width: 100%;
+    height: auto;
+}
+
+/* overwrite default link styles */
+a {
+    text-decoration: none;
+    color: black;
 }
