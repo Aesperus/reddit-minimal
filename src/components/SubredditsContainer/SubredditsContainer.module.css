@@ -45,3 +45,23 @@ li img {
 .clicked {
     background-color: #efaa82;
 }
+
+/* when the screen width is less than 822px, edit the margins to account for the display switching to columns */
+@media screen and (max-width: 822px) {
+    .container {
+        margin: 20px 0 20px 0;
+    }
+
+    /* create a third empty column in the grid for better visibility, justify all items to the grid element start (left) */
+    li {
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-items: start;
+    }
+}
+
+/* when the screen width is less than 42px, remove the third empty column from the grid for better visibility */
+@media screen and (max-width: 425px) {
+    li {
+        grid-template-columns: 1fr 1fr;
+    }
+}

@@ -41,7 +41,7 @@ function SubredditsContainer() {
 
     // clickHandler is called when a subreddit is clicked
     function clickHandler(e) {
-        const subreddit = e.target.innerText; // extract the name of the subreddit from the clicked element
+        const subreddit = e.target.id; // extract the name of the subreddit from the clicked element
         if(subreddit === loadedSubreddit) { // if the subreddit is already loaded, do nothing
             return;
         }
@@ -52,6 +52,7 @@ function SubredditsContainer() {
         subredditRef.current = e.target; // switch the subredditRef to the currently loaded subreddit
         store.dispatch(loadSubreddit(subreddit)) // dispatch loadSubreddit to store the currently loaded subreddit
         dispatch(fetchBySubreddit(subreddit)); // dispatch fetchBySubreddit to fetch posts from the clicked subreddit
+        window.scrollTo(0,0); // scroll to the top of the page
     }
 
     // renders a list of popular subreddits
@@ -63,6 +64,7 @@ function SubredditsContainer() {
             <ul aria-label="Subreddit List">
                 {subreddits.map(subreddit =>
                     <li
+                        id={subreddit.data["display_name"]}
                         aria-label={"Subreddit"}
                         onClick={clickHandler}
                         key={subreddit.data.id}

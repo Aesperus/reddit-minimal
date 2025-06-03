@@ -2,3 +2,10 @@
 .containers {
     display: flex;
 }
+
+/* when the screen width is less than 822px, switch the containers to columns */
+@media screen and (max-width: 822px) {
+    .containers {
+        flex-direction: column;
+    }
+}

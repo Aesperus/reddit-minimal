@@ -17,15 +17,18 @@
 /* logo section 25% of the element width */
 #logoContainer {
     width: 25%;
+    flex-shrink: 0;
 }
 /* add margin to the page title for readability and center it */
 #logoContainer h1 {
     margin-left: 10px;
     align-self: center;
+    text-align: center;
 }
 /* center the logo image*/
 #logoContainer a {
     align-self: center;
+    flex-shrink: 0;
 }
 
 /* search container 75% of the element width */
@@ -58,4 +61,13 @@
 /* on tab focus, the button outline is displayed */
 #searchContainer button:focus {
     outline: solid;
+}
+
+@media screen and (max-width: 741px) {
+    #logoContainer h1 {
+        display: none;
+    }
+    #logoContainer {
+        justify-content: center;
+    }
 }

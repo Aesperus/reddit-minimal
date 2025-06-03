@@ -30,3 +30,10 @@ a {
     text-decoration: none;
     color: black;
 }
+
+/* when the screen width is less than 375px (Mobile M), hide optional elements: post author and number of comments */
+@media screen and (max-width: 375px) {
+    .optional {
+        display: none;
+    }
+}

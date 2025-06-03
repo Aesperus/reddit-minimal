@@ -8,3 +8,10 @@
     padding: 10px;
     text-align: center;
 }
+
+/* when the screen width is less than 822px, edit the margins to account for the display switching to columns */
+@media screen and (max-width: 822px) {
+  .container {
+    margin: 20px 0 20px 0;
+  }
+}

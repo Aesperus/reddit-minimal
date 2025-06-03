@@ -30,9 +30,9 @@ function Post({post}) {
                 { is_video ? <video title={title} src={videoUrl} controls aria-label={"Post Video"}/> : <div></div>}
                 <hr />
                 <div style={{display: "flex", justifyContent: "space-between"}} aria-label={"Post Info"}>
-                    <p aria-label={"Post Author"}>by {author}</p>
+                    <p className={styles.optional} aria-label={"Post Author"}>by {author}</p>
                     <p aria-label={"Subreddit"}>r/{subreddit}</p>
-                    <p aria-label={"Number of Post Comments"}>comments: {num_comments}</p>
+                    <p className={styles.optional} aria-label={"Number of Post Comments"}>comments: {num_comments}</p>
                 </div>
             </div>
         </motion.div>
