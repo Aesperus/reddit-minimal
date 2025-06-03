@@ -63,6 +63,7 @@ function SubredditsContainer() {
             <ul aria-label="Subreddit List">
                 {subreddits.map(subreddit =>
                     <li
+                        aria-label={"Subreddit"}
                         onClick={clickHandler}
                         key={subreddit.data.id}
                         title={subreddit.data["public_description"] ? subreddit.data["public_description"] : subreddit.data["display_name"]}>
