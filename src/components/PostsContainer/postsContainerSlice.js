@@ -13,6 +13,19 @@ export const fetchPosts = createAsyncThunk(
     return data;
 })
 
+// async thunk to fetch posts from a specific subreddit, expects the subreddit name as a parameter
+export const fetchBySubreddit = createAsyncThunk(
+    "posts/fetchBySubreddit",
+    async (subreddit) => {
+        const response = await fetch(`https://www.reddit.com/r/${subreddit}.json`);
+        const data = await response.json();
+        // handle response codes different from 200 OK
+        if (!response.ok) {
+            alert("Error fetching posts. Status: " + response.status);
+        }
+        return data;
+    })
+
 // posts container slice
 const postsContainerSlice = createSlice({
     name: "posts",
@@ -33,6 +46,17 @@ const postsContainerSlice = createSlice({
             state.isLoading = true; // set isLoading to true when the API call is pending
         });
         builder.addCase(fetchPosts.rejected, (state) => {
+            state.isLoading = false; // set isLoading to false when the API call is rejected
+            state.error = true; // set error to true when the API call is rejected
+        });
+        builder.addCase(fetchBySubreddit.fulfilled, (state, action) => {
+            state.isLoading = false; // set isLoading to false when the API call is successful
+            state.data = action.payload.data.children; // set the data to the payload returned by the API call
+        });
+        builder.addCase(fetchBySubreddit.pending, (state) => {
+            state.isLoading = true; // set isLoading to true when the API call is pending
+        });
+        builder.addCase(fetchBySubreddit.rejected, (state) => {
             state.isLoading = false; // set isLoading to false when the API call is rejected
             state.error = true; // set error to true when the API call is rejected
         })

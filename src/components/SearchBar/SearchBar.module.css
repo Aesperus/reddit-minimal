@@ -18,9 +18,10 @@
 #logoContainer {
     width: 25%;
 }
-/* add margin to the page title for readability */
+/* add margin to the page title for readability and center it */
 #logoContainer h1 {
     margin-left: 10px;
+    align-self: center;
 }
 /* center the logo image*/
 #logoContainer a {

@@ -6,6 +6,7 @@ import SubredditsContainer from "./components/SubredditsContainer/SubredditsCont
 import {fetchPosts} from "./components/PostsContainer/postsContainerSlice.js";
 import {useEffect} from "react";
 import {useDispatch} from "react-redux";
+import {fetchSubreddits} from "./components/SubredditsContainer/subredditsSlice.jsx";
 
 function App() {
     // declare dispatch
@@ -13,6 +14,11 @@ function App() {
     // call fetchPosts to fetch posts from the Reddit API when the app loads
     useEffect(() => {
         dispatch(fetchPosts());
+    }, []);
+
+    // call fetchSubreddits to fetch subreddits from the Reddit API when the app loads
+    useEffect(() => {
+        dispatch(fetchSubreddits());
     }, []);
 
     // render SearchBar, PostContainer and SubredditContainer
