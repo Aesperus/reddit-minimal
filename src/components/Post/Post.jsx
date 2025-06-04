@@ -23,7 +23,7 @@ function Post({post}) {
             <div className={ styles.post }>
                 <a aria-label={"Post Link"}
                    href={"https://www.reddit.com/" + permalink}
-                   target="_blank" title={title}>
+                   target="_blank">
                     <h2 aria-label={"Post Title"}>{decodedTitle}</h2>
                 </a>
                 { thumbnail !== "self" && !is_video && url.includes(".jpeg") ? <img src={url} alt={title} aria-label={"Post Image"}/> : <div></div>}
