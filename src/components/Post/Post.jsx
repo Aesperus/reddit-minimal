@@ -8,6 +8,12 @@ function Post({post}) {
     const { title, author, num_comments, subreddit, url, is_video, thumbnail, permalink } = post.data;
     // decode the title to prevent escaped characters from being displayed
     const decodedTitle = decode(title);
+    // extract the image height and width if it exists
+    let imgHeight, imgWidth;
+    if(post.data.preview) {
+        imgHeight = post.data.preview.images[0].source.height;
+        imgWidth = post.data.preview.images[0].source.width;
+    }
 
     // declare a videoURL variable to store the video url if it exists
     let videoUrl;
@@ -26,7 +32,7 @@ function Post({post}) {
                    target="_blank">
                     <h2 aria-label={"Post Title"}>{decodedTitle}</h2>
                 </a>
-                { thumbnail !== "self" && !is_video && url.includes(".jpeg") ? <img src={url} alt={title} aria-label={"Post Image"}/> : <div></div>}
+                { thumbnail !== "self" && !is_video && url.includes(".jpeg") ? <img src={url} alt={title} aria-label={"Post Image"} width={imgWidth} height={imgHeight}/> : <div></div>}
                 { is_video ? <video title={title} src={videoUrl} controls aria-label={"Post Video"}/> : <div></div>}
                 <hr />
                 <div style={{display: "flex", justifyContent: "space-between"}} aria-label={"Post Info"}>

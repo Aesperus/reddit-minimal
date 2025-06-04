@@ -43,11 +43,11 @@ function SearchBar() {
                     <img
                         aria-label="Logo Image"
                         alt="Reddit Minimal Logo"
-                        height={32}
+                        height="32px"
                         role="image"
                         src="./reddit-minimal-logo.png"
                         title="Reddit Minimal"
-                        width={32}
+                        width="32px"
                     />
                 </a>
                 <h1 aria-label="Application Title" role="heading">Reddit Minimal</h1>
