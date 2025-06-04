@@ -1,12 +1,35 @@
-# React + Vite
+# Reddit Minimal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
+Reddit Minimal is an academic practice project intended to simulate the
+development of a real-world application—from initial design through testing and
+optimizations to deployment.
 
-Currently, two official plugins are available:
+The application is a simple Reddit clone designed to use the Reddit .json API
+ to retrieve and display popular posts and popular subreddits.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The application allows filtering of posts by a search term and subreddit.
 
-## Expanding the ESLint configuration
+### Wireframe
+This is a single-page application with the following initial wireframe:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+![Wireframe](./public/wireframe.png)
+
+### Technologies
+- HTML,CSS,JS
+- Vite
+- React
+- Redux
+- React-Redux
+- Framer Motion
+- Reddit API
+- Vitest, Cypress
+
+### Features
+- Posts Filter
+- Load Posts by Subreddit
+- Responsive Design
+- Accessibility
+- Unit Testing
+- End-to-End Testing
+- Lighthouse Optimizations
